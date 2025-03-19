@@ -26,7 +26,9 @@ pub fn to_md(file_path: String, output_path : String, extension : String) -> Str
 
         }
     }
-    let split_path =  file_path.replace("/", "\\").split("\\").collect::<Vec<&str>>();
+
+    let binding = file_path.replace("/", "\\");
+    let split_path =  binding.split("\\").collect::<Vec<&str>>();
     let mut name = String::new();
     if split_path.last().is_some(){
         name = split_path.last().unwrap().to_string();
