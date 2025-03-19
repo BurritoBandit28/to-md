@@ -39,5 +39,5 @@ pub fn to_md(file_path: String, output_path : String, extension : String) -> Str
     }
     let mut output_file = File::create(format!("{}\\{}.md",output_path.clone(), name));
     output_file.unwrap().write_all(return_string.as_bytes());
-    format!("output md file at: {}", format!("{}\\{}.md",output_path.clone(), name))
+    format!("{}\\{}.md",output_path.clone(), name)
 }
