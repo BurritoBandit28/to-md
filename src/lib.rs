@@ -37,7 +37,7 @@ pub fn to_md(file_path: String, output_path : String, extension : String) -> Str
         let index = split_path.len()-2usize;
         name = split_path.get(index).unwrap().to_string();
     }
-    let mut output_file = File::create(format!("{}\\{}.md",file_path.clone(), name));
+    let mut output_file = File::create(format!("{}\\{}.md",output_path.clone(), name));
     output_file.unwrap().write_all(return_string.as_bytes());
-    format!("output md file at: {}", format!("{}\\{}.md",file_path.clone(), name))
+    format!("output md file at: {}", format!("{}\\{}.md",output_path.clone(), name))
 }
