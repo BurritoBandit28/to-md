@@ -1,6 +1,7 @@
 use std::fs::{read_to_string, File};
 use std::io::Write;
 use walkdir::WalkDir;
+use log::info;
 
 /// Creates a md file of the project at the given directory, and then exports at the given output
 pub fn to_md_file(file_path: String, output_path : String, extension : String) -> String {
@@ -34,7 +35,7 @@ pub fn to_md(file_path: String, extension : String) -> String {
 
             if file_name.starts_with("target") ||  file_name.starts_with("\\target") || file_name.starts_with("venv") ||  file_name.starts_with("\\venv")  {continue}
 
-            println!("{}",file_name);
+            info!("{}",file_name);
 
             return_string = format!("{}\n# {}\n",return_string, file_name);
 
